@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by meire on 29-May-17.
- */
 
 public class PermutationGenerator {
 
@@ -31,7 +28,8 @@ public class PermutationGenerator {
                     idx = j;
             }
 
-            key += (char) ('A' + idx);
+            int shift = (26 + idx - 4) % 26;
+            key += (char) ('A' + shift);
         }
 
         return key;
