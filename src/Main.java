@@ -55,10 +55,6 @@ public class Main {
         String keyEstimate = PermutationGenerator.getMostLikelyKey(cypherText, keyLength);
         System.out.println(keyEstimate);
 
-        String fakeKey = "XRUVXHCIXVLUC";
-        Brute fakeSolution = new Brute(fakeKey, cypherText);
-        fakeSolution.run();
-
         Brute realSolution = new Brute(keyEstimate, cypherText);
         realSolution.run();
     }
