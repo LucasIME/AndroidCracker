@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class PermutationGenerator {
 
     private static String getMostLikelyKey(String cypherText, Integer keyLength) {
-        String key = "";
+        String key = "XRUVXHCIXVLUK";
 
         // aggregate by key element
         ArrayList<String> partialCypherTexts = new ArrayList<>(keyLength);
