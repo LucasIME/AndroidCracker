@@ -47,6 +47,8 @@ public class Main {
                 "ljjkajmbvcnjdvhzppuikyrifprcyyljwiytbcsvadslpglpppgopbzoidmxmthipvyytokk" +
                 "eddorlencbmckbjqunikbzbhtbevyxgsvltahpldjomctkbv";
 
+        cypherText = cypherText.toUpperCase();
+
         System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(1));
         System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(2));
 
@@ -54,10 +56,14 @@ public class Main {
 
         int keyLength = Kasiski.test(cypherText);
 
-        ArrayList<String> allPossibleKeys = PermutationGenerator.GenerateAllPermutationsOfLength(keyLength);
-        for(String currentKey : allPossibleKeys){
-            Brute worker = new Brute(currentKey, cypherText);
-            worker.run();
-        }
+
+        Brute fakeResponse = new Brute("XRUVXHCIXVLUC", cypherText);
+        fakeResponse.run();
+
+//        ArrayList<String> allPossibleKeys = PermutationGenerator.GenerateAllPermutationsOfLength(keyLength);
+//        for(String currentKey : allPossibleKeys){
+//            Brute worker = new Brute(currentKey, cypherText);
+//            worker.run();
+//        }
     }
 }
