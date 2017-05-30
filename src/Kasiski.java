@@ -11,7 +11,7 @@ public class Kasiski {
             String substring = cypherText.substring(i, i+3);
 
             if (!substringPositions.containsKey(substring))
-                substringPositions.put(substring, new ArrayList<>());
+                substringPositions.put(substring, new ArrayList<Integer>());
 
             substringPositions.get(substring).add(i);
         }
