@@ -14,6 +14,6 @@ public class Brute implements Runnable{
     }
 
     public void run(){
-        System.out.println(this.key + " " + cyphertext.charAt(0));
+        System.out.println(VigenereCipher.decipher(this.cyphertext, this.key));
     }
 }

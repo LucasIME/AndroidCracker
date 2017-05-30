@@ -47,6 +47,8 @@ public class Main {
                 "ljjkajmbvcnjdvhzppuikyrifprcyyljwiytbcsvadslpglpppgopbzoidmxmthipvyytokk" +
                 "eddorlencbmckbjqunikbzbhtbevyxgsvltahpldjomctkbv";
 
+        cypherText = cypherText.toUpperCase();
+
         System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(1));
         System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(2));
 
