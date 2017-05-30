@@ -56,6 +56,8 @@ public class Main {
 
         int keyLength = Kasiski.test(cypherText);
         System.out.println(keyLength);
+        String keyEstimate = PermutationGenerator.getMostLikelyKey(cypherText, keyLength);
+        System.out.println(keyEstimate);
 
         String fakeKey = "XRUVXHCIXVLUC";
         Brute fakeSolution = new Brute(fakeKey, cypherText);
