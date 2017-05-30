@@ -4,14 +4,16 @@
 public class Brute implements Runnable{
 
     String cyphertext;
+    String key;
     int keyLength;
 
-    public Brute(int keyLength, String cyphertext){
-        this.keyLength = keyLength;
+    public Brute(String key, String cyphertext){
+        this.key = key;
+        this.keyLength = key.length();
         this.cyphertext = cyphertext;
     }
 
     public void run(){
-        System.out.println(this.keyLength + " " + this.cyphertext);
+        System.out.println(this.key + " " + cyphertext.charAt(0));
     }
 }
