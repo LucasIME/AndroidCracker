@@ -49,24 +49,12 @@ public class Main {
 
         cypherText = cypherText.toUpperCase();
 
-        System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(1));
-        System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(2));
-
-        System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(3));
-
         int keyLength = Kasiski.test(cypherText);
         System.out.println(keyLength);
-        PermutationGenerator.getMostLikelyKey(cypherText, keyLength);
+        ArrayList<ArrayList<Character>> keyEstimates = PermutationGenerator.getMostLikelyKey(cypherText, keyLength);
+        System.out.println(keyEstimates);
 
-
-        String fakeKey = "XRUVXHCIXVLUC";
-        Brute fakeSolution = new Brute(fakeKey, cypherText);
-        fakeSolution.run();
-
-        //ArrayList<String> allPossibleKeys = PermutationGenerator.GenerateAllPermutationsOfLength(keyLength);
-        //for(String currentKey : allPossibleKeys){
-        //    Brute worker = new Brute(currentKey, cypherText);
-        //    worker.run();
-        //}
+        //Brute realSolution = new Brute(keyEstimate, cypherText);
+        //realSolution.run();
     }
 }

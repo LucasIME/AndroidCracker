@@ -34,8 +34,7 @@ public class PermutationGenerator {
             likelyKeys.get(i).add((char) ('A' + (26 + idx - 20) % 26)); // T
             likelyKeys.get(i).add((char) ('A' + (26 + idx - 0) % 26)); // A
         }
-
-        System.out.println(likelyKeys);
+        
         return likelyKeys;
     }
 
