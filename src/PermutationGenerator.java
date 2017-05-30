@@ -3,8 +3,10 @@ import java.util.ArrayList;
 
 public class PermutationGenerator {
 
-    public static String getMostLikelyKey(String cypherText, int keyLength) {
-        String key = "";
+    public static ArrayList<ArrayList<Character>> getMostLikelyKey(String cypherText, int keyLength) {
+        ArrayList<ArrayList<Character>> likelyKeys= new ArrayList<>();
+        for (int i = 0; i < keyLength; i++)
+            likelyKeys.add(new ArrayList<>());
 
         // aggregate by key element
         ArrayList<String> partialCypherTexts = new ArrayList<>(keyLength);
@@ -28,11 +30,13 @@ public class PermutationGenerator {
                     idx = j;
             }
 
-            int shift = (26 + idx - 4) % 26;
-            key += (char) ('A' + shift);
+            likelyKeys.get(i).add((char) ('A' + (26 + idx - 4) % 26)); // E
+            likelyKeys.get(i).add((char) ('A' + (26 + idx - 20) % 26)); // T
+            likelyKeys.get(i).add((char) ('A' + (26 + idx - 0) % 26)); // A
         }
 
-        return key;
+        System.out.println(likelyKeys);
+        return likelyKeys;
     }
 
     public static ArrayList<String> GenerateAllPermutationsOfLength(int n){
