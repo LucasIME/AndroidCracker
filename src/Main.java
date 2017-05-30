@@ -57,6 +57,10 @@ public class Main {
         int keyLength = Kasiski.test(cypherText);
         System.out.println(keyLength);
 
+        String fakeKey = "XRUVXHCIXVLUC";
+        Brute fakeSolution = new Brute(fakeKey, cypherText);
+        fakeSolution.run();
+
         //ArrayList<String> allPossibleKeys = PermutationGenerator.GenerateAllPermutationsOfLength(keyLength);
         //for(String currentKey : allPossibleKeys){
         //    Brute worker = new Brute(currentKey, cypherText);
