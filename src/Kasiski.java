@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Kasiski {
 
@@ -28,7 +27,11 @@ public class Kasiski {
         for (String substring : repeatedPositions.keySet()) {
             ArrayList<Integer> diffs = getDifferences(repeatedPositions.get(substring));
             for (Integer diff : diffs) {
-
+                for (Integer factor : getPrimeFactors(diff)) {
+                    if (!factorCounts.containsKey(factor))
+                        factorCounts.put(factor, 0);
+                    factorCounts.put(factor, factorCounts.get(factor)+1);
+                }
             }
         }
 
@@ -42,7 +45,10 @@ public class Kasiski {
             }
         }
 
-        return 13;
+        if (bestKeySize == null)
+            throw new RuntimeException("Kasiski test failed to find a probable key size");
+
+        return bestKeySize;
     }
 
     private static ArrayList<Integer> getDifferences(ArrayList<Integer> values) {
@@ -52,5 +58,19 @@ public class Kasiski {
             diffs.add(values.get(i)-values.get(i-1));
 
         return diffs;
+    }
+
+    private static ArrayList<Integer> getPrimeFactors(Integer number) {
+        ArrayList<Integer> factors = new ArrayList<>();
+
+        for (int i = 2; i*i <= number; i++)
+            while (number % i == 0) {
+                factors.add(i);
+                number = number / i;
+            }
+        if (number > 1)
+            factors.add(number);
+
+        return factors;
     }
 }

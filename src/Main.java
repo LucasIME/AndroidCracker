@@ -53,11 +53,12 @@ public class Main {
         System.out.println(PermutationGenerator.GenerateAllPermutationsOfLength(3));
 
         int keyLength = Kasiski.test(cypherText);
+        System.out.println(keyLength);
 
-        ArrayList<String> allPossibleKeys = PermutationGenerator.GenerateAllPermutationsOfLength(keyLength);
-        for(String currentKey : allPossibleKeys){
-            Brute worker = new Brute(currentKey, cypherText);
-            worker.run();
-        }
+        //ArrayList<String> allPossibleKeys = PermutationGenerator.GenerateAllPermutationsOfLength(keyLength);
+        //for(String currentKey : allPossibleKeys){
+        //    Brute worker = new Brute(currentKey, cypherText);
+        //    worker.run();
+        //}
     }
 }
